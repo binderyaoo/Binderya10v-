@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Төв аймгийн танилцуулга</title>
+    <style>
+        /* Ерөнхий тохиргоо */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1b4332;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        /* Товчлууруудын хэсэг */
+        .tab-menu {
+            display: flex;
+            justify-content: space-around;
+            background-color: #2d6a4f;
+            padding: 10px 5px;
+            gap: 5px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .tab-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid transparent;
+            padding: 8px 10px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Идэвхтэй байгаа товчны өнгө */
+        .tab-btn.active {
+            background-color: white;
+            color: #1b4332;
+        }
+
+        .container {
+            padding: 15px;
+            margin-bottom: 50px;
+        }
+
+        /* Хэсгүүдийн дизайн */
+        .tab-content {
+            display: none;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Зөвхөн сонгогдсон хэсэг харагдана */
+        .tab-content.active {
+            display: block;
+        }
+
+        h2 {
+            color: #1b4332;
+            border-bottom: 2px solid #2d6a4f;
+            padding-bottom: 8px;
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Зургийн загвар */
+        .tab-content img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 12px;
+            background-color: #1b4332;
+            color: white;
+            font-size: 12px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Төв аймаг</h1>
+    </header>
+
+    <!-- Товчлуурууд -->
+    <div class="tab-menu">
+        <button class="tab-btn active" onclick="openTab('home', this)">Эхлэл</button>
+        <button class="tab-btn" onclick="openTab('population', this)">Хүн ам</button>
+        <button class="tab-btn" onclick="openTab('geography', this)">Газар нутаг</button>
+        <button class="tab-btn" onclick="openTab('highlights', this)">Онцлох</button>
+    </div>
+
+    <!-- Агуулгууд -->
+    <div class="container">
+
+        <!-- 1. Эхлэл -->
+        <div id="home" class="tab-content active">
+            <h2>Эхлэл</h2>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="Төв аймаг байгаль">
+            <p>Төв аймаг нь Монгол улсын нийслэл Улаанбаатар хотыг хүрээлэн оршдог, түүх болон байгалийн баялаг өв уламжлалтай бүс нутаг юм.</p>
+        </div>
+
+        <!-- 2. Хүн ам -->
+        <div id="population" class="tab-content">
+            <h2>Хүн ам</h2>
+            <img src="https://images.unsplash.com/photo-1517736996303-4eec4a66bb17" alt="Хүн ам суурин">
+            <p>Төв аймаг нь 90,000 орчим оршин суугчтай бөгөөд 27 сумтай. Нийслэлтэй ойр оршдог тул нийгэм, эдийн засгийн хөгжил сайтай.</p>
+        </div>
+
+        <!-- 3. Газар нутаг -->
+        <div id="geography" class="tab-content">
+            <h2>Газар нутаг</h2>
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b" alt="Газар нутаг уул ус">
+            <p>Нийт 74,000 орчим кв.км нутаг дэвсгэртэй. Хан Хэнтийн уулс, Туул, Хараа голын сав газар, үзэсгэлэнт хөндий, ойн бүсүүдтэй.</p>
+        </div>
+
+        <!-- 4. Онцлох -->
+        <div id="highlights" class="tab-content">
+            <h2>Онцлох зүйлс</h2>
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Онцлох газар">
+            <p><strong>• Түүх дурсгал:</strong> Цонжин болдог дахь Чингис хааны морьт хөшөө, Манзуширын хийд.</p>
+            <p><strong>• Байгалийн цогцолбор:</strong> Горхи-Тэрэлж, Хустайн нурууны тахь нутагшуулсан газар.</p>
+            <p><strong>• Дэд бүтэц:</strong> Монголын анхны эрчимжүүлсэн үхрийн ферм Төв аймгийн Баяндэлгэр суманд байрладаг.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Төв аймгийн танилцуулга</p>
+    </footer>
+
+    <!-- Товч дарахад ажиллах Скрипт -->
+    <script>
+        function openTab(tabId, element) {
+            var contents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+
+            var buttons = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabId).classList.add("active");
+            element.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
